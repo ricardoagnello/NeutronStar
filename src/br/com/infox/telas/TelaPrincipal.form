@@ -199,10 +199,13 @@
     <Component class="javax.swing.JLabel" name="lblUsuario">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="24" style="1"/>
+          <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lblData">
       <Properties>
