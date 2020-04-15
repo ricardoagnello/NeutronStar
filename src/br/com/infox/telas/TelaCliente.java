@@ -93,6 +93,9 @@ public class TelaCliente extends javax.swing.JInternalFrame
         txtCliEndereco.setText(tblClientes.getModel().getValueAt(setar, 2).toString());
         txtCliTelefone.setText(tblClientes.getModel().getValueAt(setar, 3).toString());
         txtCliEmail.setText(tblClientes.getModel().getValueAt(setar, 4).toString());
+        
+        // a linha abaixo desabilita o botão adicionar
+        btnAdicionar.setEnabled(false);
     }
 
     //metodo para alterar dados do cliente
@@ -120,12 +123,38 @@ public class TelaCliente extends javax.swing.JInternalFrame
                     txtCliEndereco.setText(null);
                     txtCliTelefone.setText(null);
                     txtCliEmail.setText(null);
+                    btnAdicionar.setEnabled(true);
 
                 }
             }
         } catch (Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    //metodo responsavel pela remoção de clientes
+    private void remover(){
+        //a estrutura abaixo confirma a remoção do cliente
+        int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este cliente?", "Atenção",JOptionPane.YES_NO_OPTION);
+        if (confirma==JOptionPane.YES_OPTION){
+            String sql="delete from tbcliente where idcli=?";
+            try {
+                pst=conexao.prepareStatement(sql);
+                pst.setString(1, txtCliId.getText());
+                int apagado = pst.executeUpdate();
+                if (apagado>0){
+                    JOptionPane.showMessageDialog(null, "Cliente removido com sucesso");
+                    txtCliNome.setText(null);
+                    txtCliEndereco.setText(null);
+                    txtCliTelefone.setText(null);
+                    txtCliEmail.setText(null);
+                    btnAdicionar.setEnabled(true);
+                    
+                    
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
     }
 
@@ -198,6 +227,13 @@ public class TelaCliente extends javax.swing.JInternalFrame
         btnRemover.setToolTipText("Remover");
         btnRemover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRemover.setPreferredSize(new java.awt.Dimension(80, 80));
+        btnRemover.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("* Campos Obrigatórios");
 
@@ -288,7 +324,7 @@ public class TelaCliente extends javax.swing.JInternalFrame
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCliPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
@@ -322,7 +358,7 @@ public class TelaCliente extends javax.swing.JInternalFrame
                     .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                .addGap(29, 29, 29))
         );
 
         setBounds(0, 0, 640, 490);
@@ -353,6 +389,12 @@ public class TelaCliente extends javax.swing.JInternalFrame
         // chamando o metodo para alterar clientes
         alterar();
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRemoverActionPerformed
+    {//GEN-HEADEREND:event_btnRemoverActionPerformed
+        // chamando o metodo para remover cliente
+        remover();
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
