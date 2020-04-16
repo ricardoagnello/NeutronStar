@@ -161,7 +161,8 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -198,8 +199,10 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
 
         jLabel6.setText("* Perfil");
 
-        txtUsoLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        txtUsoLogin.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 txtUsoLoginActionPerformed(evt);
             }
         });
@@ -210,8 +213,10 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnUsuCreate.setToolTipText("Adicionar");
         btnUsuCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuCreate.setPreferredSize(new java.awt.Dimension(80, 80));
-        btnUsuCreate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnUsuCreate.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnUsuCreateActionPerformed(evt);
             }
         });
@@ -220,8 +225,10 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnUsuRead.setToolTipText("Consultar");
         btnUsuRead.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuRead.setPreferredSize(new java.awt.Dimension(80, 80));
-        btnUsuRead.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnUsuRead.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnUsuReadActionPerformed(evt);
             }
         });
@@ -230,18 +237,22 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnUsuUpdate.setToolTipText("Alterar");
         btnUsuUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuUpdate.setPreferredSize(new java.awt.Dimension(80, 80));
-        btnUsuUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnUsuUpdate.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnUsuUpdateActionPerformed(evt);
             }
         });
 
         btnUsuDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/delete.png"))); // NOI18N
-        btnUsuDelete.setToolTipText("Apagar");
+        btnUsuDelete.setToolTipText("Remover");
         btnUsuDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuDelete.setPreferredSize(new java.awt.Dimension(80, 80));
-        btnUsuDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnUsuDelete.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnUsuDeleteActionPerformed(evt);
             }
         });
